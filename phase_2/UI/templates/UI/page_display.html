@@ -1,0 +1,25 @@
+{% extends 'UI/page.html' %}
+{% block content %}
+    <div style="width: 100%; overflow: hidden;">
+    </div>
+    <form id="search" method="POST" action="" novalidate>
+        {% csrf_token %}
+        <div class=" form-control">  
+         <b><th>Search</th><b>
+         <div style="text-align: center"> {{form.name}}</div>
+        </div>
+        <br>
+        <button type="submit" class="save btn btn-default">Search</button>
+    </form>
+     </div>
+    {% for field in search_results %}
+        <div class=" form-control">  
+        {% for x in field %}  
+        <div style="text-align: center">{{x|linebreaks}}</div>
+        {% endfor %}
+        </div>
+    {% endfor %}
+    </div>
+    </div>
+{% endblock %}
+

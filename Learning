@@ -1,0 +1,9 @@
+Composition function: It is a method for combining multiple words into a single vector, it is the heart of any word embedding system.
+There are two types of compostion functions, 
+	Unordered: Treat input texts as bags of word embeddings
+	Syntactic: Take word and sentece structure into account
+The tradeoff between the 2 is that, the second one needs more training and resources
+The DAN model works in three simple steps, 
+	step1: Take the vector average associated with the input sentece tokens
+	step2: Pass output of step1 through a series of feed forward networks 
+	step3: Perform linear classification

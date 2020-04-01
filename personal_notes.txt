@@ -1,0 +1,63 @@
+In Natural Language Processing, the root of a word is known as Lemma.
+'pos' in NLP refers to part of speech, and this is usually a parameter that is used throughout.
+
+Stemming is the process of reducing the word to its lemma.
+Simple stemming algorithms, removes the known suffixes and prefixes. However, this is prone to error. e.g.: Laziness will be stripped to Lazi instead of Lazy
+Inflectional form of a word is the word obtained after it undergoes a transformation to distingiush its case, gender, mood, number, voice etc.
+Some of the errors that one may come across in stemming are overstemming and understemming.
+Some of the most commonly used stemming algorithms are:
+	1. Potter's Stemmer Algorithm
+	2. Lovins Stemmer Algorithm
+	3. Dawson Stemmer
+	4. Krovetz Stemmer 
+	5. Xerox Stemmer 
+	6. N-Gram Stemmer
+An image with the grammar of the commony used portet's stemmer can be found in the images folder
+NLTK is a python package that is widely used. It stands for Natural Language toolkit. Code for stemming using this python package is given in the below files:
+nltk_stemming.py
+While using the nltk package, it is best to use the lines 
+```
+>>> from nltk import * 
+>>> import nltk
+```
+One must also look at the Stanford Core NLP. It contains too many packages and once the direction of the project is clear, it can be reviewed.
+
+Lemmatization performs the same task as stemming but it takes the grammar of the language into account. Particularily, it takes the pos as an argument. If no argument is given, then the default is taken as noun. 
+It is important to check if there is any difference when the lemmatization is bettered when the argument is provided and when it is not.
+Good information about lemmatization is given in:
+https://www.nltk.org/book/ch05.html
+
+Code for Lemmatization is given in the below files:
+nltk_lemmatization.py
+This code uses the wordnet Lemmatizer and for this it is important to understand the pos tags that are compatible and can be provided as input for the lemmatizer. There is a simple if/else based mapper which converts the pos tags from one form to another.
+
+Case folding refers to the concept of reducing the case of all letters of a word to lower case. This is specifically done so that when words are queried later, then they can be identified.
+Now the words that are converted to lower case are usually the ones that are present in the headings or are at the beginning of the sentences.
+It is important to note that, in some cases, words must be left with capital letters to distuinguish them from other common words. For example, the names Bush, Black to be distinguished from bush and black.
+The casefolding method in python, reduces every character that is given as input to lower case. Thus it is important to write one's own program to perform case tokenization.
+What happens when the starting of a sentence is a propernoun?, Then the above given logic does not apply?
+
+When working with natural language processing, it is important to remove words that are 'useless', i.e. those that are not used by the computer.
+The nltk package contains a list of words that can be removed from a sentence. The code for removal of stop words is given in the below files:
+nltk_stopwords.py 
+If according to need, there are more words that need to be removed, then the english.txt file in the stopwords directory can be modified accordingly.
+
+Now while working in nlp it is important that one removes the punctuation. However, removal of punctuation results in the loss of much needed vital info in many cases. Consider the simple example:
+can't, when the punctuation is removed will result in the word becoming can t, and later, the word t will be eliminated. However, we know that the word can't must actually be converted to can not. Thankfully there exists a python package to do this work for us. 
+The work done by the python package is given in the below files:
+nltk_punctuations.py
+
+A deep learning model to be used instead of self written cosine similarity is the one given in the github link 
+https://github.com/dhwajraj/deep-siamese-text-similarity
+This however has quiet a few changes that have to be made before it can be run. 
+It is important to note that it requires tensorflow version 1.15 to work properly and this can be installed by using 
+pip install tensorflow==1.14
+The sentence data is obtained as given in the readme file and the model is run using the train.py python program
+
+Represent variable length sentences as fixed length vectors
+Prowess of LSTM for text classification by Hochreiter and Schmidhu- ber (1997) 
+Manhattan LSTM Model - Simply find the Manhattan distance between the two LSTMs to measure the similarity between the sentences
+Siamese networks are those which have two or more identical subnetworks in them 
+Word embeddings are used to give the words semantic meanings in vector representations.
+Use of vector representations, is to help the computer understand the ‘meaning’ of a word in some abstract way
+

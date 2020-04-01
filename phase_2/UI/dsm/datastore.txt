@@ -1,0 +1,140 @@
+The Browser search page does not show
+Browser takes too long to load
+The application is stuck
+Externalize message resources for the welcome page.  Update styles on various pages.
+Enable LZO should show checkbox instead of text
+Increase puppet agent timeout.
+Add additional transition states    
+Agent should retry heartbeat message  if controller did not receive the heartbeat   
+Remove agent entities beans from public schema xsd   
+Check for NN safemode during restarts   
+Dependency of templeton on hcat client   
+Remove import of mysql puppet module from manifest.   
+Add check to verify jdk path after install   
+Support filtering hosts based on discovery status   
+Alert table on the right needs to be tied visually/verbally to the context/content it is displaying   
+Remove the word alert from all the Nagios alerts descriptions.   
+Make the daemon names and other field names consistent         
+Refactor puppet kick loop to easily change retries and timeouts.   
+Support data cleanup if installation fails.   
+Replace index.php with clusters.php   
+Uninstall support from UI   
+Remove 'Playground' files from HMC   
+Support uninstall state in mysql modules   
+Rename/Relocate files as appropriate
+Update hive config to enable authorization   
+Manage services section will have any empty section when no client only components installed   
+Init Wizard: Advanced Config validation errors can be bypassed   
+Nagios Admin Contact should be checked to ensure it is always an email address   
+Templeton data on hdfs needs to be readable by all users   
+Update HDFS parameter configuration description   
+Cleanup of utilities   
+Fixup review and deploy rendering   
+Add link to uninstall on index page   
+Comment in addNodesWizardInit.js.   
+HTML being spewed in the Review+Deploy page.   
+Change the status message (success/error) location so that it shows below the page summary box  rather than above  more better visibility   
+regionservers config in the hbase only has localhost in it   
+Upgrade to yui-3.5.1   
+Uninstall's wipe flag should be correctly passed to puppet   
+Grid mount points page doesn't let one pass with only a custom mount point   
+Scale puppet master to large number of nodes.   
+During any process in the cluster initialization wizard  if the user goes back to the '1 Create Cluster' tab  the user is stuck.
+Dependencies should be added only during install phase   
+Provide a way to resume if browser crashes/is closed during the deploy-in-progress   
+Redundant downloads even though the artifacts are already installed   
+Cluster status update needs to happen for all stages of installation wizard.   
+Making transitionToNextStage more robust   
+Logging in case of error during uninstall needs to be fixed.   
+Add flow control - force redirects to appropriate pages based on cluster configuration status for better usability   
+Redesign master service assignment page so that it takes up less vertical space   
+Create lock file as part of rpm install   
+Package up the fonts/ subdirectory in the HMC RPM   
+Improve Service Management page and general popup styling   
+Mysql packages not being sent during install and uninstall   
+Uninstall does not handle component dependencies.   
+On Single Node install when install all the components the recommended num for Map/Reduce Tasks is too high   
+ZooKeeper myid files not existent on ZK install.   
+Add nodes fails to find node in db   
+Cannot uninstall - the page hangs with the spinning icon   
+Manual config changes for nn get reset on stop/start from hmc   
+Completing successful add node takes one to initialize cluster page starting from scratch   
+Unify the top nav for both Monitoring and Cluster Management   
+Add rpm spec for hmc agent.   
+Reset service back to original state after reconfiguration   
+Improve style on error log popups   
+Reinstall of cluster after failure to install results in failure   
+Fix bug with jmx parsing on HBase.   
+Using service stop instead of killall for uninstall   
+Uninstall needs to update status for failure.   
+Duplicate definition: Class[Hdp-hbase::Regionserver::Enable-ganglia]   
+Post cluster install/deploy the URL hmc/html/initializeCluster.php should be disabled   
+Boldify/Redify restart HMC message when nagios/ganglia is on the hmc host   
+nagios shows service status critical if hbase is not installed   
+Add nodes page alerts removed in case of adding duplicate nodes   
+Fix hive stop to escape $.   
+Post-Install Add Nodes - update progress title and success/error messages to reflect what it's actually doing/has done   
+Add missing JS file for making post cluster install Add Nodes work   
+Show the same welcome page to the user if the user starts configuring a cluster but has not started deploy yet   
+Add Node installs MySQL Server for Hive   
+Manage service needs a way to recover from terminated browser sessions   
+Service Reconfiguration screens should respect the 'reconfigurable' attributes set in ConfigProperties table   
+make support for os check a bit more robust   
+Add rack_info as column in Hosts table 
+Fix node assignments not not allow slaves on master.   
+Speed up page load/reload times   
+Support Resume For Add Nodes   
+Modify the router to force redirection to 'Add Nodes Progress' popup   
+Fix puppet manifests for tarball downloads via rpms.   
+update to fix the ganglia monitor_and_server anchor problem   
+Fix oozie smoke test failure   
+Fix Advanced Config: HDFS reserved space is in bytes. Too many bytes to count.   
+Create a spec file with less dependencies for HMC   
+Rpm naming needs to be corrected.   
+Templeton configs for pig archive not correct in HMC   
+Puppet fails to install 32-bit JDK properly on RHEL6
+Change os type check during node bootstrap to allow RHEL6 or CentOS6 nodes
+Puppet agent install script should use correct epel repo   
+Add support to jump to a specified state in the wizard for development purposes   
+Update README to point to trunk   
+Remove YUI source files from SVN
+Update documentation   
+Nagios install fails on RHEL6
+Consolidate head tags for organization and combine CSS files for faster load   
+Puppet error: Cannot reassign variable zookeeper_hosts at modules/hdp/manifests/params.pp:47
+In Custom config for Nagios: emails with multiple periods before the '@' fails validation   
+Custom Config page: don't allow form submission if there are client-side validation errors   
+special characters in hosts files created on some common windows editors causes issues   
+Rat compliance patch   
+Externalize the manager service name and point the Help link to a valid URL   
+License header for PHP files should use PHP comments  not HTML comments   
+Add a link to NOTICE file on every page   
+Remove /usr/bin/php dependency from the rpm's   
+Fix lzo installs to work correctly on RHEL6
+Increase puppet timeouts to handle single-node installs timing out   
+The database set up script has a duplicate definition of AmbariConfig so install fails   
+Eliminate redundant and unused definition for the columns in the table ConfigProperties   
+hdp-nagios and hdp-monitoring has wrong configuration file location  also owner:group permissions are wrong.   
+Fix invalid HTML markup on Monitoring Dashboard   
+Add Nodes Progress: for partial failure that lets the user continue  display an orange bar rather than a red bar in the progress popup   
+Support for Hadoop Security (front-end changes)   
+Weirdness with Custom Config page when the user goes back to previous stages   
+Ambari should install yum priorities on all nodes to ensure main repo is picked first   
+Make puppet generate more logs on command failures   
+Fix ambari agent init.d scripts and the bootstrapping.   
+Ambari does not handle a pre-setup user-supplied Hive Metastore   
+Change text on alerts 'about XX hours ago'   
+HDFS disk capacity on dashboard is seen as negative number   
+Remove files from ambari-web that were not meant to be checked in   
+dashboard > Summary > capacity pie chart keeps changing colors   
+Create heatmap legend entries for missing data/invalid hosts   
+Switching services does not update various UI elements   
+Error handling when errors are encountered during preparation for deploy   
+Need to be able to reliably recover from the case when the browser is closed during deploy (Step 8 post submission  Step 9) of the wizard
+User-specified custom configs (such as hdfs-site.xml overrides) should be persisted to maintain what the user specified   
+Install Wizard: Confirm host stuck at Preparing stage   
+Host component live status is broken   
+Ambari heatmaps and host information shows infinity for disk space used   
+Graphs 'degrade' over time   
+On Notification Popup  clicking 'go to nagios UI' doesn't load nagios UI   
+tmpfs filesystem being added to the list in the dir used by Ambari 

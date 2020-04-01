@@ -1,0 +1,5 @@
+0	ethnic dancer stands in front of other performers on a stage.	two women talk at a restaurant.
+0	a young girl is sitting at home.	three people are sleeping
+1	He is making dessert	Cake is being made
+1	Microsoft is acquired by LinkedIn	Microsoft is acquired by Qualcomm
+0	Microsoft is acquired by LinkedIn	LinkedIn is acquired by Microsoft

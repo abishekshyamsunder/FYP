@@ -1,0 +1,101 @@
+{% extends 'UI/page.html' %}
+{% block content %}
+        <b><h1 style="color:orange; text-align: center; font-family: 'Bigshot One', cursive;"> New Issue </h1><b>
+    <div style="width: 100%; overflow: hidden;">
+    <!--<div style="width: 600px; float: left;"> <h2><font color=#4169e1>New Defect</font></h2></div>
+    <div style="margin-left: 600px;"><h2><a href="{% url 'search' %}"><font color=#4169e1>Search</font></a></h2></div>-->
+    </div>
+    {% if statuss > 0 %}
+    <ul class="statuss">
+        {% for status in statuss %}
+            <li>
+                <p>{{status}}</p>
+            </li>
+        {% endfor %}    
+    </ul>
+{% else %}
+    <!--<div class="fixed" id="helloworld">Welcome, Please enter the issue</div>-->
+    <ul id="searchresults">
+    </ul>
+{% endif %}
+ <div class=" form-control form-group" style=" background-color:black;
+		color:#fff;
+		opacity:0.8;
+
+		top:0%;font-family: 'Alegreya', serif;
+		">  
+    <form method="POST" action="" novalidate>
+        {% csrf_token %}
+        {% for field in form.visible_fields %} 
+         <b style="color:orange"><th>{{ field.label_tag }}</th><b>
+         <div style="text-align:"> {{field}}</div>
+        {% endfor %}
+        <div id="switchdiv" style="color:orange">
+        Is the suggested issue similar to yours?
+        <label class="switch" >
+            <input type="checkbox" id="toggle" onchange="checkbox()">
+            <span class="slider round"></span>
+        </label>
+        </div>
+        <button type="submit" class="btn btn-primary" style="background:orange">Save</button>
+                <input type="hidden" id="hidden" name="hidden">
+    </form>
+ </div>
+<script>
+function checkbox()
+{
+    $('input[name="hidden"]').val(document.getElementById('helloworld').innerHTML);
+}
+$(document).ready(function() {
+//window.location.reload();
+    
+
+    // $('#id_header').keyup(function() {
+
+    //     $.ajax({
+    //         url: "current",
+    //         data: {
+    //             'search_text' : $(this).val()
+    //         },
+    //         success: searchSuccess,
+    //         dataType: 'json'
+    //     });
+    // });
+});
+
+function searchSuccess(result)
+{  
+    document.getElementById('searchresults').innerHTML =""
+    var data = JSON.parse(result);
+    var d =""
+    var i = 0;
+    while(true){
+        if(i==data.length)
+            break;
+        dList = "<li>" + data[i]['fields']['description'] + "</li>";
+        document.getElementById('searchresults').innerHTML += dList;
+        i+=1;
+    }
+}
+function displayResult(result)
+{ 
+ document.getElementById('helloworld').innerHTML=result.data;
+}
+$(function() {
+
+    $('#id_description').change(function() {
+
+        $.ajax({
+            url: "helloworld",
+            data: {
+                'search_text' : $(this).val()
+            },
+            success:displayResult,
+            dataType: 'json'
+        });
+    });
+
+});
+
+</script>
+{% endblock %}

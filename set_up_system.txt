@@ -1,0 +1,11 @@
+# Steps to be followed from start
+sudo apt-get install default-jre
+sudo apt-get install default-jdk
+pip3 install nltk
+pip install nltk
+python3
+>>> import nltk
+>>> nltk.download('all')
+pip3 install contractions
+
+pip install tensorflow==1.15

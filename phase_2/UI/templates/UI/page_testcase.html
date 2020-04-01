@@ -1,0 +1,66 @@
+{% extends 'UI/page.html' %}
+{% block content %}
+<table id="table" name="table" class="table table-striped" style="color:black; background:white">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>DESCRIPTION</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for item in data %}
+    <tr>
+        <td>{{ item.id_number }}</td>
+        <td>{{ item.description }}</td>
+    </tr>
+    <tr><td colspan="2">
+    <p id="Print"  style="color:black; white-space: pre-line">Testcase : </p>
+    </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<script>
+$(document).ready(function() {
+document.getElementById('helloworld').innerHTML=""
+})
+$(function() {
+    $("td[colspan=2]").click(function(event){
+        event.stopPropagation();
+    })
+    
+    $("td[colspan=2]").find("p").hide();
+
+      // Click handler on entire table
+    $("table").click(function(event) {
+
+          // No bubbling up
+        event.stopPropagation();
+
+        var $target = $(event.target);
+
+        var sending = (event.target.closest("tr").innerHTML)
+          // Open and close the appropriate thing
+        $.ajax({
+            url: "testcase_button",
+            data: {
+                'search_text' : sending
+            },
+            success:function(result)  
+            {  
+               $target.closest("tr").next().find("p")[0].innerHTML=result.data
+            }  
+            ,
+            dataType: 'json'
+        });
+        if ( $target.closest("td").attr("colspan") > 1 ) {
+            $target.slideUp();
+        } else {
+            $target.closest("tr").next().find("p").slideToggle();
+        }                    
+    });
+
+});
+
+</script>
+{% endblock %}
