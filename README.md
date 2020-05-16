@@ -3,6 +3,6 @@ If one needs to replicate the work done here <or> run the different codes given 
 
 All this data is critical and is important that prior permission of developers
 Abishek Shyamsunder, Adithya Viswanathan, Akash Kumar Pujari is procured before it is used.
-*email: abishekshyamsunder@gmail.com*
-*email: adithya16002@cse.ssn.edu.in*
-*email: akash16007@cse.ssn.edu.in*
+*email: abishekshyamsunder@gmail.com*.   
+*email: adithya16002@cse.ssn.edu.in*.  
+*email: akash16007@cse.ssn.edu.in*.  
